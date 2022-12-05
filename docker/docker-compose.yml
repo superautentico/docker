@@ -1,0 +1,30 @@
+version: "3.3"
+services:
+  web:
+    container_name: nginx
+    image: nginx:latest 
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx:/var/www/html
+     
+    
+  php-fpm:
+    container_name: php
+    image: php:8-fpm
+    volumes:
+      - ./nginx:/var/www/html
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+  apache:
+    container_name: apache
+    image: httpd:latest
+    ports:
+      - "8081:80"
+    volumes:
+      - ./apache:/usr/local/apache2/htdocs
+      
+    links:
+      - php-fpm
+
+
+
