@@ -1,6 +1,7 @@
 version: "3.3"
 services:
   web:
+    container_name: nginx
     image: nginx:latest 
     ports:
       - "8080:80"
@@ -10,10 +11,12 @@ services:
     links:
       - php-fpm
   php-fpm:
+    container_name: php
     image: php:8-fpm
     volumes:
       - ./nginx:/var/www/html
   apache:
+    container_name: apache
     image: httpd:latest
     ports:
       - "8081:80"
