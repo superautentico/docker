@@ -3,7 +3,10 @@ docker-compose up -d
 
 
 --------------------------------------Opcionales------------------------------------------
-lisatr dockers:
+lista estado y puerto de contenedor:
+docker-compose ps
+
+listar dockers:
 docker ps
 
 shell a docker interactiva como root:
