@@ -12,10 +12,10 @@ services:
   php-fpm:
     image: php:8-fpm
     volumes:
-      - ./apache:/var/www/html
+      - ./nginx:/var/www/html
   apache:
     image: httpd:latest
     ports:
       - "8081:80"
     volumes:
-      - ./src1:/usr/local/apache2/htdocs
+      - ./apache:/usr/local/apache2/htdocs
