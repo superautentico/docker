@@ -1,0 +1,13 @@
+compilar contenedores:
+docker-compose up -d
+
+
+--------------------------------------Opcionales------------------------------------------
+lisatr dockers:
+docker ps
+
+shell a docker interactiva como root:
+docker exec -ti 0a5903c2b25f /bin/bash
+
+shell a docker interectaiva y como usuario:
+docker exec -ti -u usuario 0a5903c2b25f /bin/bash
